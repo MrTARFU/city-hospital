@@ -15,5 +15,29 @@ public class Symptom {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "consult_id")
     private Consult consult;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Consult getConsult() {
+        return consult;
+    }
+
+    public void setConsult(Consult consult) {
+        this.consult = consult;
+    }
 }
 

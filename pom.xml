@@ -41,6 +41,7 @@
 		<properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
 		<asciidoctor-maven-plugin.version>3.0.0</asciidoctor-maven-plugin.version>
 		<spring-restdocs-asciidoctor.version>3.0.1</spring-restdocs-asciidoctor.version>
+		<io.opentelemetry.version>1.37.0</io.opentelemetry.version>
 		<java-jwt.version>4.4.0</java-jwt.version>
 		<springdoc-openapi-starter-webmvc-ui.version>2.6.0</springdoc-openapi-starter-webmvc-ui.version>
 	</properties>
@@ -109,6 +110,11 @@
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-sdk</artifactId>
+			<version>${io.opentelemetry.version}</version>
 		</dependency>
 
 		<!-- Tests -->

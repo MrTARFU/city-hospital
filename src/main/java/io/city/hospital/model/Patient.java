@@ -22,5 +22,9 @@ public class Patient {
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Consult> consults = new ArrayList<>();
+
+    public List<Consult> getConsults() {
+        return consults;
+    }
 }
 
