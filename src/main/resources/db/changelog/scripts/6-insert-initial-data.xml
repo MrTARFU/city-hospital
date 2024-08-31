@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="6-postgres" author="fp" dbms="postgresql">
+        <!-- Insert Specialties -->
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Dermatology"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Ophthalmology"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Radiology"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Family Medicine"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Pediatrics"/>
+        </insert>
+
+        <!-- Insert Patients -->
+        <insert tableName="patients">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Manuel"/>
+            <column name="age" valueNumeric="53"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Joana"/>
+            <column name="age" valueNumeric="32"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Ana"/>
+            <column name="age" valueNumeric="25"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Diogo"/>
+            <column name="age" valueNumeric="33"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Catarina"/>
+            <column name="age" valueNumeric="33"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="6"/>
+            <column name="name" value="Miguel"/>
+            <column name="age" valueNumeric="40"/>
+        </insert>
+
+        <!-- Insert Consults -->
+        <insert tableName="consults">
+            <column name="id" valueNumeric="1"/>
+            <column name="doctor" value="António"/>
+            <column name="specialty_id" valueNumeric="1"/>
+            <column name="patient_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="2"/>
+            <column name="doctor" value="António"/>
+            <column name="specialty_id" valueNumeric="1"/>
+            <column name="patient_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="3"/>
+            <column name="doctor" value="Maria"/>
+            <column name="specialty_id" valueNumeric="2"/>
+            <column name="patient_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="4"/>
+            <column name="doctor" value="Maria"/>
+            <column name="specialty_id" valueNumeric="2"/>
+            <column name="patient_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="5"/>
+            <column name="doctor" value="Carlos"/>
+            <column name="specialty_id" valueNumeric="3"/>
+            <column name="patient_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="6"/>
+            <column name="doctor" value="Gabriela"/>
+            <column name="specialty_id" valueNumeric="4"/>
+            <column name="patient_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="7"/>
+            <column name="doctor" value="Paulo"/>
+            <column name="specialty_id" valueNumeric="5"/>
+            <column name="patient_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="8"/>
+            <column name="doctor" value="Maria"/>
+            <column name="specialty_id" valueNumeric="2"/>
+            <column name="patient_id" valueNumeric="6"/>
+        </insert>
+
+        <!-- Insert Symptoms -->
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="1"/>
+            <column name="description" value="Symptom 1 Description"/>
+            <column name="consult_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="2"/>
+            <column name="description" value="Symptom 2 Description"/>
+            <column name="consult_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="3"/>
+            <column name="description" value="Symptom 3 Description"/>
+            <column name="consult_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="4"/>
+            <column name="description" value="Symptom 4 Description"/>
+            <column name="consult_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="5"/>
+            <column name="description" value="Symptom 5 Description"/>
+            <column name="consult_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="6"/>
+            <column name="description" value="Symptom 6 Description"/>
+            <column name="consult_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="7"/>
+            <column name="description" value="Symptom 7 Description"/>
+            <column name="consult_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="8"/>
+            <column name="description" value="Symptom 6 Description"/>
+            <column name="consult_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="9"/>
+            <column name="description" value="Symptom 7 Description"/>
+            <column name="consult_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="10"/>
+            <column name="description" value="Symptom 8 Description"/>
+            <column name="consult_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="11"/>
+            <column name="description" value="Symptom 9 Description"/>
+            <column name="consult_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="12"/>
+            <column name="description" value="Symptom 10 Description"/>
+            <column name="consult_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="13"/>
+            <column name="description" value="Symptom 11 Description"/>
+            <column name="consult_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="14"/>
+            <column name="description" value="Symptom 12 Description"/>
+            <column name="consult_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="15"/>
+            <column name="description" value="Symptom 13 Description"/>
+            <column name="consult_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="16"/>
+            <column name="description" value="Symptom 14 Description"/>
+            <column name="consult_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="17"/>
+            <column name="description" value="Symptom 15 Description"/>
+            <column name="consult_id" valueNumeric="8"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="6-h2" author="fp" dbms="h2">
+        <!-- Insert Specialties -->
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Dermatology"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Ophthalmology"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Radiology"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Family Medicine"/>
+        </insert>
+        <insert tableName="specialties">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Pediatrics"/>
+        </insert>
+
+        <!-- Insert Patients -->
+        <insert tableName="patients">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Manuel"/>
+            <column name="age" valueNumeric="53"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Joana"/>
+            <column name="age" valueNumeric="32"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Ana"/>
+            <column name="age" valueNumeric="25"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Diogo"/>
+            <column name="age" valueNumeric="33"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Catarina"/>
+            <column name="age" valueNumeric="33"/>
+        </insert>
+        <insert tableName="patients">
+            <column name="id" valueNumeric="6"/>
+            <column name="name" value="Miguel"/>
+            <column name="age" valueNumeric="40"/>
+        </insert>
+
+        <!-- Insert Consults -->
+        <insert tableName="consults">
+            <column name="id" valueNumeric="1"/>
+            <column name="doctor" value="António"/>
+            <column name="specialty_id" valueNumeric="1"/>
+            <column name="patient_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="2"/>
+            <column name="doctor" value="António"/>
+            <column name="specialty_id" valueNumeric="1"/>
+            <column name="patient_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="3"/>
+            <column name="doctor" value="Maria"/>
+            <column name="specialty_id" valueNumeric="2"/>
+            <column name="patient_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="4"/>
+            <column name="doctor" value="Maria"/>
+            <column name="specialty_id" valueNumeric="2"/>
+            <column name="patient_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="5"/>
+            <column name="doctor" value="Carlos"/>
+            <column name="specialty_id" valueNumeric="3"/>
+            <column name="patient_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="6"/>
+            <column name="doctor" value="Gabriela"/>
+            <column name="specialty_id" valueNumeric="4"/>
+            <column name="patient_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="7"/>
+            <column name="doctor" value="Paulo"/>
+            <column name="specialty_id" valueNumeric="5"/>
+            <column name="patient_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="consults">
+            <column name="id" valueNumeric="8"/>
+            <column name="doctor" value="Maria"/>
+            <column name="specialty_id" valueNumeric="2"/>
+            <column name="patient_id" valueNumeric="6"/>
+        </insert>
+
+        <!-- Insert Symptoms -->
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="1"/>
+            <column name="description" value="Symptom 1 Description"/>
+            <column name="consult_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="2"/>
+            <column name="description" value="Symptom 2 Description"/>
+            <column name="consult_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="3"/>
+            <column name="description" value="Symptom 3 Description"/>
+            <column name="consult_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="4"/>
+            <column name="description" value="Symptom 4 Description"/>
+            <column name="consult_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="5"/>
+            <column name="description" value="Symptom 5 Description"/>
+            <column name="consult_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="6"/>
+            <column name="description" value="Symptom 6 Description"/>
+            <column name="consult_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="7"/>
+            <column name="description" value="Symptom 7 Description"/>
+            <column name="consult_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="8"/>
+            <column name="description" value="Symptom 6 Description"/>
+            <column name="consult_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="9"/>
+            <column name="description" value="Symptom 7 Description"/>
+            <column name="consult_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="10"/>
+            <column name="description" value="Symptom 8 Description"/>
+            <column name="consult_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="11"/>
+            <column name="description" value="Symptom 9 Description"/>
+            <column name="consult_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="12"/>
+            <column name="description" value="Symptom 10 Description"/>
+            <column name="consult_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="13"/>
+            <column name="description" value="Symptom 11 Description"/>
+            <column name="consult_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="14"/>
+            <column name="description" value="Symptom 12 Description"/>
+            <column name="consult_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="15"/>
+            <column name="description" value="Symptom 13 Description"/>
+            <column name="consult_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="16"/>
+            <column name="description" value="Symptom 14 Description"/>
+            <column name="consult_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="symptoms">
+            <column name="id" valueNumeric="17"/>
+            <column name="description" value="Symptom 15 Description"/>
+            <column name="consult_id" valueNumeric="8"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

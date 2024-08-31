@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: city-hospital
+  datasource:
+    url: jdbc:postgresql://localhost:5432/city_hospital
+    driverClassName: org.postgresql.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  # Liquibase configuration
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+

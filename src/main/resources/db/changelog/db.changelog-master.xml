@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="db/changelog/scripts/1-create-patients-table.xml"/>
+    <include file="db/changelog/scripts/2-create-specialties-table.xml"/>
+    <include file="db/changelog/scripts/3-create-consults-table.xml"/>
+    <include file="db/changelog/scripts/4-create-symptoms-table.xml"/>
+    <include file="db/changelog/scripts/5-create-patient-pathologies-table.xml"/>
+    <include file="db/changelog/scripts/6-insert-initial-data.xml"/>
+
+</databaseChangeLog>
