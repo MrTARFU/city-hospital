@@ -1,9 +1,14 @@
 package io.city.hospital.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class PatientConsultResponse {
+    @JsonProperty("Consults")
     private List<ConsultDto> consults;
+
+    @JsonProperty("Symptoms")
     private List<SymptomDto> symptoms;
 
     public PatientConsultResponse(List<ConsultDto> consults, List<SymptomDto> symptoms) {

@@ -1,7 +1,12 @@
 package io.city.hospital.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TopSpecialtyResponse {
+    @JsonProperty("SpecialtyName")
     private String specialtyName;
+
+    @JsonProperty("NumberOfPatients")
     private Long numberOfPatients;
 
     public TopSpecialtyResponse(String specialtyName, Long numberOfPatients) {

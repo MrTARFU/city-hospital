@@ -1,8 +1,12 @@
 package io.city.hospital.model.dto;
 
-public class SymptomDto {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class SymptomDto {
+    @JsonProperty("SymptomId")
     private Long id;
+
+    @JsonProperty("Description")
     private String description;
 
     public SymptomDto(Long id, String description) {
@@ -10,11 +14,11 @@ public class SymptomDto {
         this.description = description;
     }
 
-    public Long getSymptomId() {
+    public Long getId() {
         return id;
     }
 
-    public void setSymptomId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -1,13 +1,20 @@
 package io.city.hospital.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ConsultDto {
-    private Long patientId;
+    @JsonProperty("ConsultId")
+    private Long consultId;
+
+    @JsonProperty("Doctor")
     private String doctor;
+
+    @JsonProperty("Specialty")
     private String specialty;
 
-    public ConsultDto(Long patientId, String doctor, String specialty) {
+    public ConsultDto(Long consultId, String doctor, String specialty) {
         this.doctor = doctor;
-        this.patientId = patientId;
+        this.consultId = consultId;
         this.specialty = specialty;
     }
 
@@ -15,19 +22,19 @@ public class ConsultDto {
         this.doctor = doctor;
     }
 
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
+    public void setConsultId(Long consultId) {
+        this.consultId = consultId;
     }
 
-    public void setSpecialtyId(String specialty) {
+    public void setSpecialty(String specialty) {
         this.specialty = specialty;
     }
 
-    public Long getPatientId() {
-        return patientId;
+    public Long getConsultId() {
+        return consultId;
     }
 
-    public String getSpecialtyId() {
+    public String getSpecialty() {
         return specialty;
     }
 
