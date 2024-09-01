@@ -6,8 +6,10 @@ import io.city.hospital.model.dto.PatientConsultResponse;
 import io.city.hospital.model.dto.PatientDto;
 import io.city.hospital.model.dto.SymptomDto;
 import io.city.hospital.repository.PatientRepository;
-import io.city.hospital.web.error.exception.PatientFoundException;
+import io.city.hospital.web.error.exception.ResourceNotFoundException;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,6 +22,8 @@ import java.util.List;
 @Transactional
 public class PatientService {
 
+    private final Logger log = LoggerFactory.getLogger(PatientService.class);
+
     private final PatientRepository patientRepository;
 
     public PatientService(PatientRepository patientRepository) {
@@ -27,8 +31,9 @@ public class PatientService {
     }
 
     public PatientConsultResponse getPatientConsultsAndSymptoms(Long patientId) {
+        log.info("Getting consults and symptoms for the patient id {}.", patientId);
         Patient patient = patientRepository.findById(patientId)
-                .orElseThrow(() -> new PatientFoundException("Patient with number " + patientId + " not found."));
+                .orElseThrow(() -> new ResourceNotFoundException("Patient with number: " + patientId + " not found."));
 
         List<ConsultDto> consults = patient.getConsults().stream()
                 .map(consult -> new ConsultDto(consult.getId(), consult.getDoctor(), consult.getSpecialty().getName()))
@@ -42,6 +47,7 @@ public class PatientService {
     }
 
     public Page<PatientDto> getAllPatients(int page, int size, String sortBy) {
+        log.info("Getting all the registered Patients.");
         Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
         Page<Patient> patients = patientRepository.findAll(pageable);
 

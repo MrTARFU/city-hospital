@@ -6,7 +6,47 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <!-- Insert Pathologies -->
-    <changeSet id="7" author="fp">
+    <changeSet id="7-postgresql" author="fp" dbms="postgresql">
+        <insert tableName="patient_pathologies">
+            <column name="patient_id" valueNumeric="1"/>
+            <column name="pathologies" value="Pathology 1"/>
+        </insert>
+        <insert tableName="patient_pathologies">
+            <column name="patient_id" valueNumeric="1"/>
+            <column name="pathologies" value="Pathology 2"/>
+        </insert>
+        <insert tableName="patient_pathologies">
+            <column name="patient_id" valueNumeric="1"/>
+            <column name="pathologies" value="Pathology 3"/>
+        </insert>
+
+        <insert tableName="patient_pathologies">
+            <column name="patient_id" valueNumeric="2"/>
+            <column name="pathologies" value="Pathology 3"/>
+        </insert>
+
+        <insert tableName="patient_pathologies">
+            <column name="patient_id" valueNumeric="3"/>
+            <column name="pathologies" value="Pathology 4"/>
+        </insert>
+
+        <insert tableName="patient_pathologies">
+            <column name="patient_id" valueNumeric="4"/>
+            <column name="pathologies" value="Pathology 5"/>
+        </insert>
+
+        <insert tableName="patient_pathologies">
+            <column name="patient_id" valueNumeric="5"/>
+            <column name="pathologies" value="Pathology 6"/>
+        </insert>
+
+        <insert tableName="patient_pathologies">
+            <column name="patient_id" valueNumeric="6"/>
+            <column name="pathologies" value="Pathology 7"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="7-h2" author="fp" dbms="h2">
         <insert tableName="patient_pathologies">
             <column name="patient_id" valueNumeric="1"/>
             <column name="pathologies" value="Pathology 1"/>

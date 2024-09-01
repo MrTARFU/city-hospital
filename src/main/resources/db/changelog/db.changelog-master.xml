@@ -12,5 +12,5 @@
     <include file="db/changelog/scripts/5-create-patient-pathologies-table.xml"/>
     <include file="db/changelog/scripts/6-insert-initial-data.xml"/>
     <include file="db/changelog/scripts/7-insert-in-patient_pathologies.xml"/>
-
+    <include file="db/changelog/scripts/8-adjust-consults-auto-increment.xml"/>
 </databaseChangeLog>

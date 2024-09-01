@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="8-postgres" author="fp" dbms="postgresql">
+        <sql>
+            SELECT setval(pg_get_serial_sequence('consults', 'id'), (SELECT MAX(id) FROM consults) + 1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="8-h2" author="fp" dbms="h2">
+        <sql>
+            -- Get the new start value and restart the sequence
+            ALTER TABLE consults ALTER COLUMN id RESTART WITH (SELECT COALESCE(MAX(id), 0) + 1 FROM consults);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
