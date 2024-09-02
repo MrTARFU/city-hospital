@@ -1,8 +1,13 @@
 package io.city.hospital.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ConsultInsertDto {
+    @JsonProperty("Doctor")
     private String doctor;
+    @JsonProperty("PatientId")
     private Long patientId;
+    @JsonProperty("SpecialtyId")
     private Long specialtyId;
 
     public String getDoctor() {

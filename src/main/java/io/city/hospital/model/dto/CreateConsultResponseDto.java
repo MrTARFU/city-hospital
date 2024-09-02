@@ -2,6 +2,8 @@ package io.city.hospital.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class CreateConsultResponseDto {
     @JsonProperty("ConsultId")
     private long id;
@@ -42,5 +44,18 @@ public class CreateConsultResponseDto {
 
     public void setSpecialtyName(String specialtyName) {
         this.specialtyName = specialtyName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CreateConsultResponseDto that = (CreateConsultResponseDto) o;
+        return id == that.id && Objects.equals(doctor, that.doctor) && Objects.equals(patientName, that.patientName) && Objects.equals(specialtyName, that.specialtyName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, doctor, patientName, specialtyName);
     }
 }

@@ -44,13 +44,13 @@ public class ConsultService {
         consult.setSpecialty(specialty);
         consult.setPatient(patient);
 
-        var a = consultRepository.save(consult);
+        var saveResult = consultRepository.save(consult);
 
         CreateConsultResponseDto createConsultResponseDto = new CreateConsultResponseDto();
-        createConsultResponseDto.setId(a.getId());
-        createConsultResponseDto.setDoctor(a.getDoctor());
-        createConsultResponseDto.setPatientName(a.getPatient().getName());
-        createConsultResponseDto.setSpecialtyName(a.getSpecialty().getName());
+        createConsultResponseDto.setId(saveResult.getId());
+        createConsultResponseDto.setDoctor(saveResult.getDoctor());
+        createConsultResponseDto.setPatientName(saveResult.getPatient().getName());
+        createConsultResponseDto.setSpecialtyName(saveResult.getSpecialty().getName());
 
         return createConsultResponseDto;
     }

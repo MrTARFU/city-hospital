@@ -43,7 +43,7 @@ public class SpecialtyController {
     })
     @GetMapping("/specialties/top")
     public ResponseEntity<List<TopSpecialtyResponse>> getTopSpecialties(@RequestParam(name = "minPatients") int minPatients) {
-        log.info("Request to get which specialties are having more than {} patients", minPatients);
+        log.info("Request to know which specialties have a minimum of {} patients", minPatients);
         MetricUtils.incrementMetric(MetricsConstants.GET_TOP_SPECIALTIES);
         List<TopSpecialtyResponse> specialties = specialtyService.getTopSpecialties(minPatients);
         return new ResponseEntity<>(specialties, HttpStatus.OK);

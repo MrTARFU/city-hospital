@@ -25,6 +25,17 @@ public class ExceptionTranslator {
                 .buildResponseEntity(HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Object> handleIllegalArgumentException(HttpServletRequest request, IllegalArgumentException ex) {
+        Span.current().recordException(ex).setStatus(StatusCode.ERROR);
+        return new ErrorResponseBuilder()
+                .originalRequest(request)
+                .errorKey(Span.current().getSpanContext().getTraceId() + "-" + Span.current().getSpanContext().getSpanId())
+                .title("Illegal Argument Exception")
+                .message(ex.getMessage())
+                .buildResponseEntity(HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(EnvironmentMismatchException.class)
     public ResponseEntity<Object> handleEnvironmentMismatchException(HttpServletRequest request, EnvironmentMismatchException ex) {
         Span.current().recordException(ex).setStatus(StatusCode.ERROR);

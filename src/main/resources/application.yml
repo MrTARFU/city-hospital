@@ -1,6 +1,6 @@
 spring:
   application:
-    name: city-hospital
+    name: 'city-hospital'
   datasource:
     url: jdbc:postgresql://localhost:5432/city_hospital
     driverClassName: org.postgresql.Driver
@@ -9,6 +9,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+  profiles:
+    active: local
 
   # Liquibase configuration
   liquibase:

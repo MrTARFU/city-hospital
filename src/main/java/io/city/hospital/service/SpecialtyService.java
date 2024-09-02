@@ -18,5 +18,4 @@ public class SpecialtyService {
         public List<TopSpecialtyResponse> getTopSpecialties(int minPatients) {
             return specialtyRepository.findSpecialtiesWithMinPatients(minPatients);
         }
-
 }
